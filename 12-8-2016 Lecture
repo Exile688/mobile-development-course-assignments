@@ -1,0 +1,163 @@
+12-8-2016 Lecture
+
+“Array” - 
+
+var myArray = [“Bob” “Sally”, “Jim”]
+index- zero based, to get “Bob” string from array, say: myArray[0],
+returns “Bob”
+
+myArray.length=3
+
+To get last element: myArray.length=-1
+
+To create an empty array:
+var myArray = ["Bob", "Sally", "Jim"];
+console.log(myArray);
+console.log(myArray.length);
+
+myArray.push("Josh");
+console.log(myArray);
+console.log(myArray.length);
+
+for (var i = 0; i < myArray.length; i++) {
+  console.log("index = " + i + " value = " + myArray[i]);
+}
+
+
+List backwards:
+var myArray = ["Bob", "Sally", "Jim"];
+console.log(myArray);
+console.log(myArray.length);
+
+myArray.push("Josh");
+console.log(myArray);
+//console.log(myArray.length);
+
+for (var i = 0; i < myArray.length; i++) {
+  //console.log("index = " + i + " value = " + myArray[i]);
+}
+ for (var i = myArray.length - 1; i >=0; i--) {
+   console.log(myArray[i]);
+ }
+
+“if we knew where Bob was
+console.log(myArray[0]);
+myArray[0] = "Sean";
+console.log(myArray[0]);
+
+
+To save “Bob” as a savedValue Ex:
+var myArray = ["Bob", "Sally", "Jim"];
+console.log(myArray);
+console.log(myArray.length);
+
+myArray.push("Josh");
+console.log(myArray);
+//console.log(myArray.length);
+
+for (var i = 0; i < myArray.length; i++) {
+  //console.log("index = " + i + " value = " + myArray[i]);
+}
+ for (var i = myArray.length - 1; i >=0; i--) {
+   console.log(myArray[i]);
+ }
+console.log(myArray[0]);
+
+
+var savedValue = myArray[0];
+
+myArray[0] = "Sean";
+
+
+console.log(myArray[0]);
+
+//Bob
+console.log(savedValue);
+
+
+//Explore the name array:
+var firstName = "Bob";
+
+console.log(firstName[0]);
+console.log(firstName[1]);
+
+
+//Given an array of ints, return the number of 9’s in the array.
+function arrayCount9(array){
+//counter
+  var nineS = 0;
+
+//increasing the count starting from zero 
+  for (var i = 0; i <= array.length; i++){
+// check for what you are looking for (9)
+    if (array[i] == 9){
+
+// if found 9 then increase the count      
+      nineS++; 
+    }
+  }
+// show the count    
+  return nineS;
+}  
+
+// show (array counting ([numbers]))
+console.log(arrayCount9([1, 2, 9]));
+console.log(arrayCount9([1, 9, 9]));
+console.log(arrayCount9([1, 9, 9, 3, 9]));
+
+// Return true if the sequence of numbers 1, 2, 3 appears
+//in the array somewhere.
+
+function array123(array){
+//  var seq = 0;
+  for (var i = 0; i <= array.length; i++){
+    
+    if (array[i] == 1){
+      
+     if (array[i + 1] == 2){
+     
+       if (array[i+2] == 3){
+       
+         return true;
+         
+       }
+     }
+    }
+}
+
+  return false;
+}
+console.log(array123([1, 1, 2, 3]));
+console.log(array123([1, 1, 2, 4, 1]));
+console.log(array123([1, 1, 2, 1, 2, 3]));
+
+// Alt answer for above
+function array123(array){
+
+  for (var i = 0; i <= array.length; i++){
+    
+if (array[i] == 1 && array[i +1] == 2 && array[i + 2] == 3)
+       
+         return true;
+         
+}
+
+  return false;
+}
+console.log(array123([1, 1, 2, 3]));
+console.log(array123([1, 1, 2, 4, 1]));
+console.log(array123([1, 1, 2, 1, 2, 3]));
+
+
+// Create a function that repeats the string by interger.
+
+function repeatString(word, num){
+ var gen = "";
+ for (var i = 0; i < num; i++){
+   gen = gen + word;
+ }
+  console.log(gen);
+}
+       
+repeatString("Co" , 3);
+repeatString("Pat" , 2); 
