@@ -1,10 +1,42 @@
 function range(start, end) {
     // your code here
+    function range(start, end) {
+  var myArray = [];
+  
+  for (var i = start; i <= end; i++) {
+  myArray.push(i); 
+ }
+  
+  return myArray;
+}
+
+console.log(range(1, 10));
 }
 
 function sum(array) {
     // your sum function here
 }
+function range(start, end) {
+  var myArray = [];
+  
+  for (var i = start; i <= end; i++) {
+  myArray.push(i); 
+ }
+  
+  return myArray;
+}
+
+function sum(myArray){
+  var g = 0;
+  
+  for (var i = 0; i < myArray.length; i++){
+    g += myArray[i];
+  }
+  
+  return g;
+}
+
+console.log(sum(range(1,10)));
 
 
 // do not edit below this line
