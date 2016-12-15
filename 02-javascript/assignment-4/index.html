@@ -3,6 +3,18 @@
   <script type="text/javascript">
           function execute() {
             // Your code here.
+            var person = {
+  name: "Bob",
+  age: 45,
+  children: [{name: "Bob jr", age:20},{name:"Susie", age:10}],
+  celebrateBirthday: function(){
+    this.age++;
+  }
+}
+
+console.log(person.age);
+person.celebrateBirthday();
+console.log(person.age);
           }
     </script>
 </head>
