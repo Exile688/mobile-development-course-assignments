@@ -37,11 +37,15 @@
         <th>Points Possible</th>
         <th>Percent</th>
     </tr>
-    <tr *ngFor="let assignment of assignmentList">
+    <tr *ngFor="let assignment of assignmentList; let num = index;">
         <td>{{ assignment.name }}</td>
         <td>{{ assignment.pointsScored }}</td>
         <td>{{ assignment.pointsPossible }}</td>
         <td>{{ assignment.percent | percent }}</td>
+        <td>{{ assignment.iGrade }}</td>
+        <td class='no-border'>
+            <button(click)='deleteAssignment(num)'> x </button>
+        </td>
     </tr>
 </table>
 

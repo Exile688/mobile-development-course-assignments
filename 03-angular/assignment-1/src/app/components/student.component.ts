@@ -29,33 +29,52 @@ export class StudentComponent {
     }
     addAssignment(): void{
         let assignment: Assignment;
+        let assignmentPercent = this.iScoredPoints / this.iPossiblePoints
 
         assignment = {
             name: this.iName,
             pointsScored: this.iScoredPoints,
             pointsPossible: this.iPossiblePoints,
-            percent: this.iScoredPoints / this.iPossiblePoints,
+            percent: assignmentPercent,
+            iGrade: this.getGrade(assignmentPercent)
+            
         }
 
         this.assignmentList.push(assignment);
         this.updatePerformance();
     }
+
+    deleteAssignment(num: number): void{
+        this.assignmentList.splice(num, 1);
+    }
     updatePerformance(){
+
+        if (this.assignmentList.length === 0 )
+        {
+            this.percent = 0;
+            this.grade ='N/A';
+            this.pointsPossible = 0;
+            this.pointsScored = 0;
+        
+        }
+        else{
+
         this.pointsPossible = this.assignmentList.reduce(this.addPointsPossible, 0);
         this.pointsScored = this.assignmentList.reduce(this.addPointsScored, 0);
         this.percent = this.pointsScored / this.pointsPossible;
-        this.grade = this.getGrade();
+        this.grade = this.getGrade()this.percent;
 
     }
+}
 
-    private getGrade(): string {
-        if (this.percent > 0.9)
+    private getGrade(percent: number): string {
+        if (percent > 0.9)
             return 'A';
-        else if (this.percent >= .8)
+        else if (percent >= .8)
             return 'B';
-        else if (this.percent >= .7)
+        else if (percent >= .7)
             return 'C';
-        else if (this.percent >= .6)
+        else if (percent >= .6)
             return 'D';
         else 
             return 'F';
@@ -73,5 +92,6 @@ interface Assignment {
     pointsScored: number;
     pointsPossible: number; 
     percent: number;
+    iGrade: string;
 
 }
