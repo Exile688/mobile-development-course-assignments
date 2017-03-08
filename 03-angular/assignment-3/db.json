@@ -1,3 +1,16 @@
 {
-"assignments": []
+  "assignments": [
+    {
+      "id": 1,
+      "name": "first Assignment",
+      "points": 90,
+      "points_possible": 100
+    },
+    {
+      "id": 2,
+      "name": "Second Assignment",
+      "points": 95,
+      "points_possible": 100
+    }
+  ]
 }
