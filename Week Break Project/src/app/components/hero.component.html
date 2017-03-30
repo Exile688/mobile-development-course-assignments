@@ -1,0 +1,52 @@
+<strong>Character: </strong>{{ characterName }}
+<p>
+<strong>Relm: </strong>{{ Relm }}
+</p>
+<h3>Performance</h3>
+<table>
+    <tr>
+        <th>Points</th>
+        <th>Points Possible</th>
+        <th>Percent</th>
+        <th>Grade</th>
+    </tr>
+    <tr>
+        <td>{{ pointsScored }}</td>
+        <td>{{ pointsPossible }}</td>
+        <td>{{ percent | percent }}</td>
+        <td>{{ grade }}</td>
+    </tr>
+</table>
+<hr />
+<h3>Add Quest</h3>
+<p>
+    Quest Name: <input type="text" [(ngModel)]="iName" />
+</p>
+<p>
+    Scored Points: <input type="number" [(ngModel)]="iScoredPoints" />
+</p>
+<p>
+    Points Possible: <input type="number" [(ngModel)]="iPossiblePoints" />
+</p>
+<button type='submit' (click)="addAssignment()">Add Assignment</button>
+
+<h3>Quests</h3>
+<table>
+    <tr>
+        <th>Quest Name</th>
+        <th>Points Scored</th>
+        <th>Points Possible</th>
+        <th>Percent</th>
+        <th>Grade</th>
+    </tr>
+    <tr *ngFor="let quest of questList; let num = index;">
+        <td>{{ quest.name }}</td>
+        <td>{{ quest.points }}</td>
+        <td>{{ quest.points_possible }}</td>
+        <td>{{ quest.percent | percent }}</td>
+        <td>{{ quest.grade }}</td>
+        <td class='no-border'>
+            <button (click)='deleteQuest(quest)'>x</button>
+        </td>
+    </tr>
+</table>
